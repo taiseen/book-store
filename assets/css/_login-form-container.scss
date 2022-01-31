@@ -1,0 +1,96 @@
+.login-form-container {
+    position        : fixed;
+    top             : 0;
+    right           : -105%;
+    z-index         : 102;
+    width           : 100%;
+    height          : 100%;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    background-color: rgba(255, 255, 255, .9);
+    transition      : right .5s ease;
+
+    &.userClick {
+        right: 0;
+    }
+
+
+
+    #closeLoginBtn {
+        position: absolute;
+        top     : 1.5rem;
+        right   : 2.5rem;
+        cursor  : pointer;
+        @include fontStyle(5rem, var(--black));
+
+        &:hover {
+            color     : tomato;
+            transform : rotate(180deg);
+            transition: transform .3s linear;
+        }
+    }
+
+    form {
+        width        : 40rem;
+        padding      : 2rem;
+        margin       : 2rem;
+        border       : var(--border);
+        background   : var(--white);
+        box-shadow   : var(--box-shadow);
+        border-radius: .5rem;
+
+        h3 {
+            text-align    : center;
+            text-transform: uppercase;
+            @include fontStyle(2.5rem, var(--black));
+        }
+
+        span {
+            display    : block;
+            padding-top: 1rem;
+            font-size  : 1.5rem;
+        }
+
+        .inputBox {
+            width         : 100%;
+            margin        : .7rem 0;
+            padding       : 1rem 1.2rem;
+            border        : var(--border);
+            border-radius : .5rem;
+            text-transform: none;
+            @include fontStyle(1.6rem, var(--black));
+        }
+
+        .checkBox {
+            display    : flex;
+            align-items: center;
+            gap        : 0.5rem;
+            padding    : 1rem 0;
+
+            label {
+                cursor: pointer;
+                @include fontStyle(1.6rem, var(--lightColor));
+            }
+        }
+
+        .btn {
+            width     : 100%;
+            margin    : 1.5rem 0;
+            text-align: center;
+        }
+
+        p {
+            padding-top: .8rem;
+            @include fontStyle(1.5rem, var(--lightColor));
+
+            a {
+                color: var(--green);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

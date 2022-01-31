@@ -1,0 +1,65 @@
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .header-1 {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 0;
+    }
+
+    body {
+        padding-bottom: 6rem;
+    }
+
+    .header {
+
+        #searchBtn {
+            display: inline-block;
+        }
+
+        .header-1 {
+            position  : relative;
+            box-shadow: var(--box-shadow);
+
+            .searchForm {
+                position        : absolute;
+                top             : 115%;
+                right           : 2rem;
+                width           : 90%;
+                box-shadow      : var(--box-shadow);
+                transform       : scale(0);
+                transform-origin: top center;
+                transition      : transform .3s linear;
+
+                &.userClick {
+                    transform: scale(1);
+                }
+            }
+        }
+
+        .header-2 {
+            display: none;
+        }
+
+        .bottom-navbar {
+            transform: scale(1);
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}

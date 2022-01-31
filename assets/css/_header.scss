@@ -1,0 +1,114 @@
+.header {
+
+    #searchBtn {
+        display: none;
+    }
+
+    .header-1 {
+        background     : var(--white);
+        padding        : 1.5rem 9%;
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+
+        .logo {
+            font-weight: bolder;
+            @include fontStyle(2.5rem, var(--black));
+
+            i {
+                color: var(--green);
+            }
+        }
+
+        .searchForm {
+            display         : flex;
+            align-items     : center;
+            width           : 50rem;
+            height          : 5rem;
+            overflow        : hidden;
+            border-radius   : .5rem;
+            border          : var(--border);
+            background-color: var(--white);
+
+            input {
+                width         : 100%;
+                height        : 100%;
+                padding       : 0 1.2rem;
+                text-transform: none;
+                @include fontStyle(1.6rem, var(--black));
+            }
+
+            label {
+                padding-right: 1.5rem;
+                cursor       : pointer;
+                @include fontStyle(2.5rem, var(--black));
+
+                &:hover {
+                    color: var(--green);
+                }
+            }
+        }
+
+        .icons {
+
+            div,
+            a {
+                margin-left: 1.5rem;
+                cursor     : pointer;
+                @include fontStyle(2.5rem, var(--black));
+
+                &:hover {
+                    color: var(--green);
+                }
+            }
+
+        }
+
+    }
+
+    .header-2 {
+        background-color: var(--green);
+        text-align      : center;
+
+        &.when-user-scrolling {
+            position: fixed;
+            top     : 0;
+            left    : 0;
+            right   : 0;
+            z-index : 101;
+        }
+
+        a {
+            display: inline-block;
+            padding: 1.5rem;
+            @include fontStyle(2rem, var(--white));
+
+            &:hover {
+                background-color: var(--greenDark);
+            }
+        }
+    }
+
+    .bottom-navbar {
+        position        : fixed;
+        bottom          : 0;
+        right           : 0;
+        left            : 0;
+        z-index         : 101;
+        text-align      : center;
+        background      : var(--green);
+        transform       : scale(0);
+        transform-origin: bottom center;
+        transition      : transform .3s linear;
+
+        a {
+            padding: 2rem;
+            @include fontStyle(2.5rem, var(--white));
+
+            &:hover {
+                background: var(--greenDark);
+            }
+        }
+
+    }
+}

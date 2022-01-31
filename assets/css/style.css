@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
+/* 21 - Jan - 2022  */
+:root {
+  --green: #27AE60;
+  --greenDark: #219150;
+  --black: #444;
+  --white: #FFF;
+  --lightColor: #666;
+  --border: .1rem solid rgba(0, 0, 0, .1);
+  --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+  --border-hover: .1rem solid var(--black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  list-style: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+/*
+    100% / 16px = 6.25%
+    6.25% == 1px 
+
+    6.25% * 10 = 62.5% 
+    62.5% == 10px
+*/
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--green);
+}
+
+/* 
+Style Scale for all 
+but in responsive - its resizing at 991px
+*/
+section {
+  padding: 2rem 7%;
+  margin-bottom: 3rem;
+}
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
+body {
+  height: 300rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: .9rem 3rem;
+  margin-top: 1rem;
+  border-radius: .5rem;
+  background: var(--green);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: var(--white);
+}
+
+.btn:hover {
+  background: var(--greenDark);
+}
+
+.header #searchBtn {
+  display: none;
+}
+
+.header .header-1 {
+  background: var(--white);
+  padding: 1.5rem 9%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .header-1 .logo {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.header .header-1 .logo i {
+  color: var(--green);
+}
+
+.header .header-1 .searchForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50rem;
+  height: 5rem;
+  overflow: hidden;
+  border-radius: .5rem;
+  border: var(--border);
+  background-color: var(--white);
+}
+
+.header .header-1 .searchForm input {
+  width: 100%;
+  height: 100%;
+  padding: 0 1.2rem;
+  text-transform: none;
+  font-size: 1.6rem;
+  color: var(--black);
+}
+
+.header .header-1 .searchForm label {
+  padding-right: 1.5rem;
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.header .header-1 .searchForm label:hover {
+  color: var(--green);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a {
+  margin-left: 1.5rem;
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover {
+  color: var(--green);
+}
+
+.header .header-2 {
+  background-color: var(--green);
+  text-align: center;
+}
+
+.header .header-2.when-user-scrolling {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+}
+
+.header .header-2 a {
+  display: inline-block;
+  padding: 1.5rem;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.header .header-2 a:hover {
+  background-color: var(--greenDark);
+}
+
+.header .bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 101;
+  text-align: center;
+  background: var(--green);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-transition: -webkit-transform .3s linear;
+  transition: -webkit-transform .3s linear;
+  transition: transform .3s linear;
+  transition: transform .3s linear, -webkit-transform .3s linear;
+}
+
+.header .bottom-navbar a {
+  padding: 2rem;
+  font-size: 2.5rem;
+  color: var(--white);
+}
+
+.header .bottom-navbar a:hover {
+  background: var(--greenDark);
+}
+
+.login-form-container {
+  position: fixed;
+  top: 0;
+  right: -105%;
+  z-index: 102;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  -webkit-transition: right .5s ease;
+  transition: right .5s ease;
+}
+
+.login-form-container.userClick {
+  right: 0;
+}
+
+.login-form-container #closeLoginBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  cursor: pointer;
+  font-size: 5rem;
+  color: var(--black);
+}
+
+.login-form-container #closeLoginBtn:hover {
+  color: tomato;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: -webkit-transform .3s linear;
+  transition: -webkit-transform .3s linear;
+  transition: transform .3s linear;
+  transition: transform .3s linear, -webkit-transform .3s linear;
+}
+
+.login-form-container form {
+  width: 40rem;
+  padding: 2rem;
+  margin: 2rem;
+  border: var(--border);
+  background: var(--white);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+  border-radius: .5rem;
+}
+
+.login-form-container form h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.login-form-container form span {
+  display: block;
+  padding-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.login-form-container form .inputBox {
+  width: 100%;
+  margin: .7rem 0;
+  padding: 1rem 1.2rem;
+  border: var(--border);
+  border-radius: .5rem;
+  text-transform: none;
+  font-size: 1.6rem;
+  color: var(--black);
+}
+
+.login-form-container form .checkBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.login-form-container form .checkBox label {
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--lightColor);
+}
+
+.login-form-container form .btn {
+  width: 100%;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.login-form-container form p {
+  padding-top: .8rem;
+  font-size: 1.5rem;
+  color: var(--lightColor);
+}
+
+.login-form-container form p a {
+  color: var(--green);
+}
+
+.login-form-container form p a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 2rem;
+  }
+  .header-1 {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 0;
+  }
+  body {
+    padding-bottom: 6rem;
+  }
+  .header #searchBtn {
+    display: inline-block;
+  }
+  .header .header-1 {
+    position: relative;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+  }
+  .header .header-1 .searchForm {
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    width: 90%;
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: top center;
+            transform-origin: top center;
+    -webkit-transition: -webkit-transform .3s linear;
+    transition: -webkit-transform .3s linear;
+    transition: transform .3s linear;
+    transition: transform .3s linear, -webkit-transform .3s linear;
+  }
+  .header .header-1 .searchForm.userClick {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .header .header-2 {
+    display: none;
+  }
+  .header .bottom-navbar {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

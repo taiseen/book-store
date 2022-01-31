@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* 21 - Jan - 2022  */
+
+:root {
+    --green       : #27AE60;
+    --greenDark   : #219150;
+    --black       : #444;
+    --white       : #FFF;
+    --lightColor  : #666;
+    --border      : .1rem solid rgba(0, 0, 0, .1);
+    --box-shadow  : 0 .5rem 1rem rgba(0, 0, 0, .1);
+    --border-hover: .1rem solid var(--black);
+}
+
+
+* {
+    margin         : 0;
+    padding        : 0;
+    border         : 0;
+    outline        : none;
+    list-style     : none;
+    user-select    : none;
+    text-decoration: none;
+    text-transform : capitalize;
+    box-sizing     : border-box;
+    font-family    : 'Nunito', sans-serif;
+    transition     : all .1s linear;
+}
+
+@import 'mixing';
+
+/*
+    100% / 16px = 6.25%
+    6.25% == 1px 
+
+    6.25% * 10 = 62.5% 
+    62.5% == 10px
+*/
+html {
+    font-size         : 62.5%;
+    overflow-x        : hidden;
+    scroll-behavior   : smooth;
+    scroll-padding-top: 6rem;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--green);
+    }
+}
+
+/* 
+Style Scale for all 
+but in responsive - its resizing at 991px
+*/
+section {
+    padding      : 2rem 7%;
+    margin-bottom: 3rem;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+body {
+    height: 300rem;
+}
+
+
+.btn {
+    display      : inline-block;
+    padding      : .9rem 3rem;
+    margin-top   : 1rem;
+    border-radius: .5rem;
+    background   : var(--green);
+    cursor       : pointer;
+    font-weight  : 500;
+    @include fontStyle(1.7rem, var(--white));
+
+    &:hover {
+        background   : var(--greenDark);
+    }
+}
+
+
+@import 'header';
+@import 'login-form-container';
+@import 'responsiveness';
