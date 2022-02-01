@@ -8,21 +8,20 @@
     display         : flex;
     align-items     : center;
     justify-content : center;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: rgba(0, 0, 0, .7);
     transition      : right .5s ease;
 
     &.userClick {
         right: 0;
     }
 
-
-
+    
     #closeLoginBtn {
         position: absolute;
         top     : 1.5rem;
         right   : 2.5rem;
         cursor  : pointer;
-        @include fontStyle(5rem, var(--black));
+        @include fontStyle(5rem, var(--white));
 
         &:hover {
             color     : tomato;

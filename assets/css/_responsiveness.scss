@@ -71,10 +71,23 @@
             }
         }
     }
+
+    .newsletter {
+        background-position: left;
+
+        form {
+            margin-left: 0;
+            min-width  : 100%;
+        }
+    }
 }
 
 @media (max-width: 450px) {
     html {
         font-size: 50%;
+    }
+
+    .home {
+        min-height: 90vh;
     }
 }

@@ -1,0 +1,31 @@
+.newsletter {
+
+    background           : url(../img/letter-bg.jpg) no-repeat;
+    background-size      : cover;
+    background-position  : center;
+    background-attachment: fixed;
+
+    form {
+
+        max-width  : 50rem;
+        margin-left: auto;
+        text-align : center;
+        padding    : 5rem 0;
+
+
+        h3 {
+            padding-bottom: .7rem;
+            font-weight   : normal;
+            @include fontStyle(2.2rem, var(--white));
+        }
+
+        .box {
+            width         : 100%;
+            margin        : 0.7rem 0;
+            padding       : 1rem 1.2rem;
+            border-radius : .5rem;
+            text-transform: none;
+            @include fontStyle(1.6rem, var(--black));
+        }
+    }
+}

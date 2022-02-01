@@ -1,0 +1,42 @@
+.arrivals {
+
+    .arrivals-slider {
+
+        .box {
+            @include flex;
+            align-items: center;
+            padding    : 2rem 1rem;
+            margin     : 1rem 0;
+            border     : var(--border);
+
+            &:hover {
+                border: var(--borderHover);
+            }
+
+            .image img {
+                height: 15rem;
+            }
+
+            .content {
+
+                h3 {
+                    @include fontStyle(2rem, var(--black));
+                }
+
+                .price {
+                    padding-bottom: .5rem;
+                    @include fontStyle(2.2rem, var(--black));
+
+                    span {
+                        text-decoration: line-through;
+                        @include fontStyle(1.5rem, var(--lightColor));
+                    }
+                }
+
+                .stars i {
+                    @include fontStyle(1.5rem, var(--green));
+                }
+            }
+        }
+    }
+}

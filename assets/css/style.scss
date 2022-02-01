@@ -119,9 +119,21 @@ section {
     }
 }
 
+.reviews .reviews-slider .swiper-button-prev,
+.reviews .reviews-slider .swiper-button-next,
+.arrivals .arrivals-slider .swiper-button-prev,
+.arrivals .arrivals-slider .swiper-button-next {
+    color: var(--imgWhite);
+}
+
+
 @import 'header';
 @import 'login-form-container';
 @import 'home';
 @import 'icons-container';
 @import 'featured';
+@import 'newsletter';
+@import 'arrivals';
+@import 'deal';
+@import 'reviews';
 @import 'responsiveness';

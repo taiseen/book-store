@@ -1,0 +1,33 @@
+.deal {
+
+    @include flex;
+    align-items: center;
+    background : #f3f3f3;
+
+    .content {
+        flex: 1 1 42rem;
+
+        h3 {
+            padding-bottom: 0.5rem;
+            @include fontStyle(2.5rem, var(--green));
+        }
+
+        h1 {
+            @include fontStyle(4rem, var(--black));
+        }
+
+        p {
+            padding    : 1rem 0;
+            line-height: 2;
+            @include fontStyle(1.6rem, var(--lightColor));
+        }
+    }
+
+    .image {
+        flex: 1 1 42rem;
+
+        img {
+            width: 100%;
+        }
+    }
+}

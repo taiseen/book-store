@@ -3,7 +3,6 @@
     background         : url(../img/banner-bg.jpg) no-repeat;
     background-size    : cover;
     background-position: center;
-    // height         : 100vh;
 
     .row {
         @include flex;
@@ -18,7 +17,7 @@
 
             p {
                 line-height: 2;
-                padding: 1rem 0;
+                padding    : 1rem 0;
                 @include fontStyle(2rem, var(--lightColor));
             }
 
