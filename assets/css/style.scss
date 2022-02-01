@@ -11,8 +11,9 @@
     --imgWhite   : #EEE;
     --lightColor : #666;
     --border     : .1rem solid rgba(0, 0, 0, .1);
+    --colorBorder: .1rem solid var(--green);
     --boxShadow  : 0 .5rem 1rem rgba(0, 0, 0, .1);
-    --borderHover: .1rem solid var(--black);
+    --borderHover: .1rem solid var(--green);
 }
 
 
@@ -106,13 +107,13 @@ section {
         left            : 0;
         transform       : translateY(-50%);
         width           : 100%;
-        height          : .1rem;
+        height          : .2rem;
         z-index         : -1;
-        background-color: rgba(0, 0, 0, .1);
+        background-color: var(--green);
     }
 
     span {
-        border          : var(--border);
+        border          : var(--colorBorder);
         padding         : .5rem 2rem;
         background-color: var(--white);
         @include fontStyle(4rem, var(--black));
@@ -124,8 +125,50 @@ section {
 .arrivals .arrivals-slider .swiper-button-prev,
 .arrivals .arrivals-slider .swiper-button-next {
     color: var(--imgWhite);
+
+    &:hover {
+        color: var(--green);
+    }
 }
 
+.colorContainer {
+    position        : fixed;
+    top             : 8rem;
+    right           : 2rem;
+    transform       : scale(0);
+    transform-origin: right;
+
+    &.userClick {
+        // right   : 2rem;
+        transform: scale(1);
+    }
+
+    .colorBox {
+        width        : 3rem;
+        height       : 3rem;
+        display      : inline-block;
+        cursor       : pointer;
+        border-radius: .2rem;
+    }
+}
+
+
+.loader-container {
+    position       : fixed;
+    top            : 0;
+    left           : 0;
+    height         : 100%;
+    width          : 100%;
+    z-index        : 1000;
+    background     : #f7f7f7;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    &.loadingGif {
+        display: none;
+    }
+}
 
 @import 'header';
 @import 'login-form-container';
@@ -136,4 +179,6 @@ section {
 @import 'arrivals';
 @import 'deal';
 @import 'reviews';
+@import 'blogs';
+@import 'footer';
 @import 'responsiveness';

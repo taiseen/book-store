@@ -1,0 +1,74 @@
+.footer {
+
+    .box-container {
+
+        @include grid(25rem);
+
+        .box {
+
+            h3 {
+                padding: 1rem 0;
+                @include fontStyle(2.2rem, var(--black));
+            }
+
+            a {
+                display: block;
+                padding: 1rem 0;
+                @include fontStyle(1.4rem, var(--lightColor));
+
+                &:hover i {
+                    padding-right: 1.5rem;
+                }
+
+                i {
+                    color        : var(--green);
+                    padding-right: .8rem;
+                }
+            }
+
+            .email {
+                text-transform: lowercase;
+            }
+
+            .map {
+                width: 100%;
+            }
+        }
+    }
+
+    .share {
+        padding   : 1rem 0;
+        margin-top: 2rem;
+        text-align: center;
+
+        a {
+            height       : 5rem;
+            width        : 5rem;
+            line-height  : 5rem;
+            margin       : 0 .3rem;
+            border-radius: 50%;
+            background   : var(--green);
+            @include fontStyle(2rem, var(--white));
+
+            &:hover {
+                background: var(--black);
+            }
+        }
+    }
+
+    .credit {
+        border-top: var(--colorBorder);
+        margin-top: 2rem;
+        padding   : 2.5rem 1rem 0;
+        @include fontStyle(2rem, var(--lightColor));
+        text-align: center;
+
+        span {
+            text-transform: capitalize;
+            @include fontStyle(2rem, var(--green));
+        }
+    }
+
+
+
+}

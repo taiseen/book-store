@@ -5,9 +5,10 @@
 Inspire & Learning From ==> [this link](https://youtu.be/6XmDdIRmg84)
 
 ## Learning Context
-- SASS ==> variable , nesting , @mixing + @include 
-- Side Toggle Menu Button 
-- Div Opacity Hover Effect 
+- SASS ==> variable , nesting , @mixing + @include
+- Bottom Menu
+- Starting Loader
+- Color Toggle
 - Responsiveness
 
 <img src="./assets/img/demo.png"/>

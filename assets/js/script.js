@@ -3,10 +3,32 @@
 const searchBtn = document.getElementById('searchBtn');
 const loginBtn = document.getElementById('loginBtn');
 const closeLoginBtn = document.getElementById('closeLoginBtn');
+const colorPalette = document.getElementById('colorPalette');
 
-const searchForm = document.querySelector('.searchForm');
+const root = document.querySelector(':root');
 const header2 = document.querySelector('.header-2');
+const searchForm = document.querySelector('.searchForm');
+const colorContainer = document.querySelector('.colorContainer');
+const colorContainerBox = document.querySelectorAll('.colorBox ');
 const loginFormContainer = document.querySelector('.login-form-container');
+const loaderContainer = document.querySelector('.loader-container');
+
+
+colorPalette.addEventListener('click', () => {
+
+    colorContainer.classList.add('userClick');
+
+    colorContainerBox.forEach(color => {
+
+        color.addEventListener('click', () => {
+
+            let clickColor = color.getAttribute('data-color');
+            root.style.setProperty('--green', clickColor);
+            colorContainer.classList.remove('userClick');
+
+        });
+    });
+});
 
 searchBtn.addEventListener('click', () => {
     searchForm.classList.toggle('userClick');
@@ -23,6 +45,7 @@ closeLoginBtn.addEventListener('click', () => {
 window.addEventListener('scroll', () => {
 
     searchForm.classList.remove('userClick');
+    colorContainer.classList.remove('userClick');
 
     if (window.scrollY > 80) {
         header2.classList.add('when-user-scrolling');
@@ -41,12 +64,42 @@ window.addEventListener('load', () => {
         header2.classList.remove('when-user-scrolling');
     }
 
+    loader();
 });
+
+
+const loader = () => {
+    setTimeout(() => {
+        loaderContainer.classList.add('loadingGif');
+    }, 4000);
+}
+
+
+
+
+
+// DISABLE the RIGHT CLICK for viewing the ==> View Page Source Code
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+}, false);
+
+
+// DISABLE SHORTCUT KEY
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.keyCode==123) {
+        e.stopPropagation();
+        e.preventDefault();
+    }
+}, false);
+
+
+
+
 
 
 // swiper-slider functionality... 
 
-let bookSliderSwiper = new Swiper('.books-slider', {
+let book = new Swiper('.books-slider', {
 
     loop: true,
     grabCursor: true,
@@ -56,11 +109,6 @@ let bookSliderSwiper = new Swiper('.books-slider', {
     autoplay: {
         delay: 2000,
         disableOnInteraction: false,
-    },
-
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
     },
 
     breakpoints: {
@@ -79,12 +127,12 @@ let bookSliderSwiper = new Swiper('.books-slider', {
 
 
 
-let featuredSliderSwiper = new Swiper(".featured-slider", {
+let featured = new Swiper(".featured-slider", {
     loop: true,
     spaceBetween: 10,
     centeredSlides: true,
     autoplay: {
-        delay: 3000,
+        delay: 2500,
         disableOnInteraction: false,
     },
     navigation: {
@@ -109,7 +157,7 @@ let featuredSliderSwiper = new Swiper(".featured-slider", {
 
 
 
-let arrivalsSliderSwiper1 = new Swiper(".arrivals-slider-1", {
+let arrivals1 = new Swiper(".arrivals-slider-1", {
     loop: true,
     spaceBetween: 10,
     centeredSlides: true,
@@ -136,7 +184,7 @@ let arrivalsSliderSwiper1 = new Swiper(".arrivals-slider-1", {
 
 
 
-let arrivalsSliderSwiper2 = new Swiper(".arrivals-slider-2", {
+let arrivals2 = new Swiper(".arrivals-slider-2", {
     loop: true,
     spaceBetween: 10,
     centeredSlides: true,
@@ -164,7 +212,7 @@ let arrivalsSliderSwiper2 = new Swiper(".arrivals-slider-2", {
 
 
 
-let reviewsSliderSwiper = new Swiper('.reviews-slider', {
+let reviews = new Swiper('.reviews-slider', {
 
     loop: true,
     grabCursor: true,
@@ -179,10 +227,6 @@ let reviewsSliderSwiper = new Swiper('.reviews-slider', {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
 
     breakpoints: {
         0: {
@@ -196,4 +240,30 @@ let reviewsSliderSwiper = new Swiper('.reviews-slider', {
         },
     },
 
+});
+
+
+let blogs = new Swiper(".blogs-slider", {
+    loop: true,
+    spaceBetween: 10,
+    centeredSlides: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        450: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 3,
+        },
+    },
 });

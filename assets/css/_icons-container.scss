@@ -1,4 +1,5 @@
 .icons-container {
+    margin-top : 2rem;
     @include grid(25rem);
 
     .icons {
@@ -6,7 +7,7 @@
         align-items: center;
         gap        : 1.5rem;
         padding    : 2rem 0;
-
+        
         i {
             @include fontStyle(3.5rem, var(--green));
         }
