@@ -1,0 +1,100 @@
+.featured {
+
+    .featured-slider {
+
+        .box {
+            margin    : 2rem 0;
+            position  : relative;
+            overflow  : hidden;
+            text-align: center;
+            border    : var(--border);
+            cursor    : pointer;
+
+            &:hover {
+                border: var(--borderHover);
+            }
+
+            &:hover .icons {
+                transform: translateY(0);
+            }
+
+            &:hover .image {
+                transform: translateY(6rem);
+            }
+
+            .icons {
+                border-bottom: var(--borderHover);
+                position     : absolute;
+                top          : 0;
+                left         : 0;
+                right        : 0;
+                z-index      : 1;
+                background   : var(--white);
+                transform    : translateY(-105%);
+
+                a {
+                    padding: 1.3rem 1.5rem;
+                    @include fontStyle(2.2rem, var(--black));
+
+                    &:hover {
+                        color           : var(--white);
+                        background-color: var(--green);
+                    }
+                }
+            }
+
+            .image {
+                padding   : 1rem;
+                background: linear-gradient(15deg, var(--imgWhite), 30%, var(--white) 30.1%);
+
+                img {
+                    height: 25rem;
+                }
+            }
+
+            .content {
+                padding   : 1.5rem;
+                background: var(--imgWhite);
+
+                h3 {
+                    @include fontStyle(2rem, var(--black));
+                }
+
+                .price {
+                    padding-top: 1.5rem;
+                    @include fontStyle(2.2rem, var(--black));
+
+                    span {
+                        font-size      : 1.5rem;
+                        text-decoration: line-through;
+                        @include fontStyle(1.5rem, var(--lightColor));
+
+                    }
+                }
+            }
+
+
+        }
+
+
+        .swiper-button-prev,
+        .swiper-button-next {
+
+            border          : var(--borderHover);
+            height          : 4rem;
+            width           : 4rem;
+            color           : var(--black);
+            background-color: var(--white);
+
+            &::after {
+                font-size: 2rem;
+            }
+
+            &:hover {
+                color           : var(--white);
+                background-color: var(--black);
+            }
+        }
+    }
+
+}

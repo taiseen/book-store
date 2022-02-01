@@ -46,27 +46,29 @@ window.addEventListener('load', () => {
 
 // swiper-slider functionality... 
 
-let swiper = new Swiper('.reviews-slider', {
+let bookSliderSwiper = new Swiper('.books-slider', {
 
     loop: true,
-    grabCursor: true,
+    // grabCursor: true,
     spaceBetween: 20,
+    // slidesPerView: 1,
+    centeredSlides: true,
 
     autoplay: {
-        delay: 2500,
+        delay: 2000,
         disableOnInteraction: false,
     },
 
     pagination: {
         el: '.swiper-pagination',
-        type: "fraction",
+        // type: "fraction",
         clickable: true,
     },
 
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+    // navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    // },
 
     breakpoints: {
         0: {
@@ -75,6 +77,39 @@ let swiper = new Swiper('.reviews-slider', {
         768: {
             slidesPerView: 2,
         },
+        1024: {
+            slidesPerView: 3,
+        },
     },
 
+});
+
+
+
+let featuredSliderSwiper = new Swiper(".featured-slider", {
+    spaceBetween: 10,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        450: {
+            slidesPerView: 2,
+        },
+        768: {
+            slidesPerView: 3,
+        },
+        1024: {
+            slidesPerView: 4,
+        },
+    },
 });

@@ -1,0 +1,23 @@
+.icons-container {
+    @include grid(25rem);
+
+    .icons {
+        display    : flex;
+        align-items: center;
+        gap        : 1.5rem;
+        padding    : 2rem 0;
+
+        i {
+            @include fontStyle(3.5rem, var(--green));
+        }
+
+        h3 {
+            padding-bottom: 0.5rem;
+            @include fontStyle(2.5rem, var(--black));
+        }
+
+        p {
+            @include fontStyle(1.5rem, var(--lightColor));
+        }
+    }
+}

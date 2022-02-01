@@ -13,10 +13,11 @@
 
         .logo {
             font-weight: bolder;
-            @include fontStyle(2.5rem, var(--black));
+
+            @include fontStyle(3rem, var(--black));
 
             i {
-                color: var(--green);
+                @include fontStyle(3rem, var(--green));
             }
         }
 
